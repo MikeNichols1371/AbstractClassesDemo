@@ -10,10 +10,78 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            /*
-             * Todo follow all comments!! 
-             */
+            List<Vehicle> vehicles = new List<Vehicle>();
+            var car1 = new Car()
+            {
+                Year = "2016",
+                Make = "Chevy",
+                Model = "Impala",
+                HasTrunk = true,
+            };
+            vehicles.Add(car1);
+            Console.WriteLine("Car One: ");
+            Console.WriteLine($"Year: {car1.Year}");
+            Console.WriteLine($"Make: {car1.Make}");
+            Console.WriteLine($"Model: {car1.Model}");
+            Console.WriteLine($"Has a Trunk: {car1.HasTrunk}");
+            Console.WriteLine();
 
+            var bike1 = new Motorcycle()
+            {
+                Year = "2014",
+                Make = "Honda",
+                Model = "CBR 600",
+                HasSideCar = false,
+            };
+            vehicles.Add(bike1);
+            Console.WriteLine("Bike 1: ");
+            Console.WriteLine($"Year: {bike1.Year}");
+            Console.WriteLine($"Make: {bike1.Make}");
+            Console.WriteLine($"Model: {bike1.Model}");
+            Console.WriteLine($"Has a Side Car: {bike1.HasSideCar}");
+            Console.WriteLine();
+
+            Vehicle vehicle1 = new Car()
+            {
+                Year = "2022",
+                Make = "Honda",
+                Model = "Civic",
+                HasTrunk = true,
+            };
+            vehicles.Add(vehicle1);
+            Console.WriteLine("Car 2: ");
+            Console.WriteLine($"Year: {vehicle1.Year}");
+            Console.WriteLine($"Make: {vehicle1.Make}");
+            Console.WriteLine($"Model: {vehicle1.Model}");
+            Console.WriteLine();
+            vehicle1.DriveAbstract();
+            vehicle1.DriveVirtual();
+            Console.WriteLine();
+
+            Vehicle vehicle2 = new Motorcycle()
+            {
+                Year = "2020",
+                Make = "Harley Davidson",
+                Model = "Sportster",
+                HasSideCar = false,
+            };
+            vehicles.Add(vehicle2);
+            Console.WriteLine("Bike 2: ");
+            Console.WriteLine($"Year: {vehicle2.Year}");
+            Console.WriteLine($"Make: {vehicle2.Make}");
+            Console.WriteLine($"Model: {vehicle2.Model}");
+            Console.WriteLine();
+            vehicle2.DriveAbstract();
+            vehicle2.DriveVirtual();
+            Console.WriteLine();
+
+            foreach (var vehicle in vehicles)
+            {
+                Console.WriteLine($"Year: {vehicle.Year}");
+                Console.WriteLine($"Make: {vehicle.Make}");
+                Console.WriteLine($"Model: {vehicle.Model}");
+                Console.WriteLine();
+            }
             #region Vehicles
 
             /*
